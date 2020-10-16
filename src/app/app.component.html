@@ -1,9 +1,14 @@
-<app-header></app-header>
+<app-header 
+(selectedRecipes)="navigateRecipes($event)"
+(selectedShoppingList)="navigateShoppingList($event)"
+></app-header>
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <app-recipes></app-recipes>
-            <app-shopping-list></app-shopping-list> 
-        </div>
+        <div class="col-md-12" >
+            <app-recipes *ngIf="ifRecipesComponent == true">
+            </app-recipes>
+            <app-shopping-list *ngIf="ifShopingListComponent == true">
+            </app-shopping-list>
         </div>
     </div>
+</div>
